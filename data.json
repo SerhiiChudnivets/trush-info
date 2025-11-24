@@ -25,12 +25,8 @@
       "logo": [
         {
           "id": 1,
-          "documentId": "f4qze5qjmpp35dc27j19ooci",
           "name": "Gates-of-Olympus_500x560_D-W.jpg",
-          "alternativeText": "Promotional art for Gates of Olympus slot game featuring Zeus and lightning.",
-          "caption": "Promotional image for the 'Gates of Olympus' slot game, featuring Zeus holding a lightning bolt before the mythical gates.",
-          "width": 500,
-          "height": 560,
+          "url": "/uploads/Gates_of_Olympus_500x560_D_W_2f303db1a0.jpg",
           "formats": {
             "thumbnail": {
               "name": "thumbnail_Gates-of-Olympus_500x560_D-W.jpg",
@@ -56,24 +52,11 @@
               "sizeInBytes": 56422,
               "url": "/uploads/small_Gates_of_Olympus_500x560_D_W_2f303db1a0.jpg"
             }
-          },
-          "hash": "Gates_of_Olympus_500x560_D_W_2f303db1a0",
-          "ext": ".jpg",
-          "mime": "image/jpeg",
-          "size": 66.52,
-          "url": "/uploads/Gates_of_Olympus_500x560_D_W_2f303db1a0.jpg",
-          "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
-          "folderPath": "/",
-          "createdAt": "2025-11-24T12:04:57.495Z",
-          "updatedAt": "2025-11-24T12:05:04.586Z",
-          "publishedAt": "2025-11-24T12:04:57.495Z",
-          "locale": null
+          }
         }
       ]
     }
   ],
-  "_generated_at": "2025-11-24T19:18:02.849Z",
+  "_generated_at": "2025-11-24T19:28:05.540Z",
   "_version": "1.0.0"
 }
