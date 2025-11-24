@@ -21,9 +21,59 @@
     {
       "id": 1,
       "Name": "Gates of Olimpus",
-      "link": "/gotolink"
+      "link": "/gotolink",
+      "logo": [
+        {
+          "id": 1,
+          "documentId": "f4qze5qjmpp35dc27j19ooci",
+          "name": "Gates-of-Olympus_500x560_D-W.jpg",
+          "alternativeText": "Promotional art for Gates of Olympus slot game featuring Zeus and lightning.",
+          "caption": "Promotional image for the 'Gates of Olympus' slot game, featuring Zeus holding a lightning bolt before the mythical gates.",
+          "width": 500,
+          "height": 560,
+          "formats": {
+            "thumbnail": {
+              "name": "thumbnail_Gates-of-Olympus_500x560_D-W.jpg",
+              "hash": "thumbnail_Gates_of_Olympus_500x560_D_W_2f303db1a0",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 139,
+              "height": 156,
+              "size": 8.68,
+              "sizeInBytes": 8681,
+              "url": "/uploads/thumbnail_Gates_of_Olympus_500x560_D_W_2f303db1a0.jpg"
+            },
+            "small": {
+              "name": "small_Gates-of-Olympus_500x560_D-W.jpg",
+              "hash": "small_Gates_of_Olympus_500x560_D_W_2f303db1a0",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 446,
+              "height": 500,
+              "size": 56.42,
+              "sizeInBytes": 56422,
+              "url": "/uploads/small_Gates_of_Olympus_500x560_D_W_2f303db1a0.jpg"
+            }
+          },
+          "hash": "Gates_of_Olympus_500x560_D_W_2f303db1a0",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 66.52,
+          "url": "/uploads/Gates_of_Olympus_500x560_D_W_2f303db1a0.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "folderPath": "/",
+          "createdAt": "2025-11-24T12:04:57.495Z",
+          "updatedAt": "2025-11-24T12:05:04.586Z",
+          "publishedAt": "2025-11-24T12:04:57.495Z",
+          "locale": null
+        }
+      ]
     }
   ],
-  "_generated_at": "2025-11-24T19:09:50.530Z",
+  "_generated_at": "2025-11-24T19:18:02.849Z",
   "_version": "1.0.0"
 }
