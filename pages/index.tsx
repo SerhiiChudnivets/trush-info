@@ -1,6 +1,12 @@
 import React from 'react'
 import Head from 'next/head'
 
+interface Slot {
+  Name?: string
+  logo?: any
+  link?: string
+}
+
 interface CasinoData {
   name: string
   description: string
@@ -15,6 +21,8 @@ interface CasinoData {
   luxury_cta_text?: string
   luxury_features?: string
   luxury_logo_url?: string
+  // Repeatable components
+  Slots?: Slot[]
 }
 
 export default function LuxuryCasino() {
@@ -142,6 +150,74 @@ export default function LuxuryCasino() {
           line-height: 1.6;
         }
 
+        .slots-section {
+          padding: 80px 0;
+        }
+
+        .section-title {
+          text-align: center;
+          font-size: 42px;
+          color: #d4af37;
+          margin-bottom: 50px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .slots-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 30px;
+        }
+
+        .slot-card {
+          background: rgba(255, 255, 255, 0.05);
+          padding: 30px;
+          border-radius: 15px;
+          border: 2px solid #d4af37;
+          text-align: center;
+          transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .slot-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .slot-logo {
+          margin-bottom: 20px;
+          height: 150px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .slot-logo img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+          border-radius: 10px;
+        }
+
+        .slot-card h3 {
+          color: #d4af37;
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+
+        .slot-link {
+          display: inline-block;
+          background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+          color: #1a1a2e;
+          padding: 12px 30px;
+          border-radius: 25px;
+          text-decoration: none;
+          font-weight: bold;
+          transition: transform 0.3s;
+        }
+
+        .slot-link:hover {
+          transform: scale(1.05);
+        }
+
         footer {
           text-align: center;
           padding: 40px 0;
@@ -156,6 +232,10 @@ export default function LuxuryCasino() {
           }
 
           .features {
+            grid-template-columns: 1fr;
+          }
+
+          .slots-grid {
             grid-template-columns: 1fr;
           }
 
@@ -197,6 +277,29 @@ export default function LuxuryCasino() {
             <p>Licensed and regulated with advanced security measures</p>
           </div>
         </section>
+
+        {data.Slots && data.Slots.length > 0 && (
+          <section className="slots-section">
+            <h2 className="section-title">Featured Slots</h2>
+            <div className="slots-grid">
+              {data.Slots.map((slot, index) => (
+                <div key={index} className="slot-card">
+                  {slot.logo && (
+                    <div className="slot-logo">
+                      <img src={slot.logo.url || slot.logo} alt={slot.Name || 'Slot'} />
+                    </div>
+                  )}
+                  <h3>{slot.Name || `Slot ${index + 1}`}</h3>
+                  {slot.link && (
+                    <a href={slot.link} className="slot-link" target="_blank" rel="noopener noreferrer">
+                      Play Now
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         <footer>
           <p>&copy; 2024 {data.name}. All rights reserved. {data.url}</p>

@@ -4,5 +4,6 @@
   "language_code": "en",
   "allow_indexing": true,
   "redirect_404s_to_homepage": true,
-  "use_www_version": true
+  "use_www_version": true,
+  "Slots": []
 }
