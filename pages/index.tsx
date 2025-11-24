@@ -9,8 +9,9 @@ interface Slot {
 
 interface CasinoData {
   name: string
-  description: string
+  description?: string
   url: string
+  template?: string
   language_code: string
   allow_indexing: boolean
   redirect_404s_to_homepage: boolean
@@ -21,8 +22,21 @@ interface CasinoData {
   luxury_cta_text?: string
   luxury_features?: string
   luxury_logo_url?: string
+  // Classic Casino fields
+  classic_welcome_text?: string
+  classic_main_cta?: string
+  classic_footer_text?: string
+  // Modern Casino fields
+  modern_tagline?: string
+  modern_accent_color?: string
+  modern_features_list?: string
   // Repeatable components
   Slots?: Slot[]
+  // Metadata
+  _generated_at?: string
+  _version?: string
+  // Allow any other fields
+  [key: string]: any
 }
 
 export default function LuxuryCasino() {
@@ -218,6 +232,52 @@ export default function LuxuryCasino() {
           transform: scale(1.05);
         }
 
+        .data-section {
+          padding: 80px 0;
+          background: rgba(255, 255, 255, 0.03);
+          border-radius: 15px;
+          margin: 40px 0;
+        }
+
+        .data-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 20px;
+          margin-top: 30px;
+        }
+
+        .data-item {
+          background: rgba(255, 255, 255, 0.05);
+          padding: 20px;
+          border-radius: 10px;
+          border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .data-label {
+          color: #d4af37;
+          font-weight: bold;
+          font-size: 14px;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+          letter-spacing: 1px;
+        }
+
+        .data-value {
+          color: #e0e0e0;
+          font-size: 16px;
+          word-break: break-word;
+          line-height: 1.6;
+        }
+
+        .data-value pre {
+          background: rgba(0, 0, 0, 0.3);
+          padding: 10px;
+          border-radius: 5px;
+          overflow-x: auto;
+          font-size: 14px;
+          color: #b0b0b0;
+        }
+
         footer {
           text-align: center;
           padding: 40px 0;
@@ -300,6 +360,42 @@ export default function LuxuryCasino() {
             </div>
           </section>
         )}
+
+        <section className="data-section">
+          <h2 className="section-title">Website Data</h2>
+          <div className="data-grid">
+            {Object.entries(data)
+              .filter(([key]) => {
+                // Виключаємо токени, ключі та службові поля
+                const excludeFields = [
+                  'github_token',
+                  'cloudflare_email',
+                  'cloudflare_api_key',
+                  'cloudflare_account_id',
+                  'cloudflare_project_name',
+                  'source_directory',
+                  'deployment_status',
+                  'deployment_url',
+                  'last_deployed_at'
+                ];
+                return !excludeFields.includes(key);
+              })
+              .map(([key, value]) => (
+                <div key={key} className="data-item">
+                  <div className="data-label">{key.replace(/_/g, ' ')}</div>
+                  <div className="data-value">
+                    {typeof value === 'object' ? (
+                      <pre>{JSON.stringify(value, null, 2)}</pre>
+                    ) : typeof value === 'boolean' ? (
+                      value ? '✅ Yes' : '❌ No'
+                    ) : (
+                      value || '-'
+                    )}
+                  </div>
+                </div>
+              ))}
+          </div>
+        </section>
 
         <footer>
           <p>&copy; 2024 {data.name}. All rights reserved. {data.url}</p>

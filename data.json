@@ -1,9 +1,29 @@
 {
   "name": "trush.info",
+  "description": "text text text ssss",
   "url": "trush.info",
+  "template": "luxury-casino",
   "language_code": "en",
   "allow_indexing": true,
   "redirect_404s_to_homepage": true,
   "use_www_version": true,
-  "Slots": []
+  "luxury_hero_title": "TITLE",
+  "luxury_hero_subtitle": "SUBTITLE",
+  "luxury_cta_text": "CTA TEXT",
+  "luxury_logo_url": "/logo-url",
+  "classic_welcome_text": "WELCOME TEXT",
+  "classic_main_cta": "MAIN CTA",
+  "classic_footer_text": "FOOTER TEXT",
+  "modern_tagline": "MODERN TAGLINE",
+  "modern_accent_color": "#FFF",
+  "modern_features_list": "FEATURES LIST",
+  "Slots": [
+    {
+      "id": 1,
+      "Name": "Gates of Olimpus",
+      "link": "/gotolink"
+    }
+  ],
+  "_generated_at": "2025-11-24T18:16:45.711Z",
+  "_version": "1.0.0"
 }
