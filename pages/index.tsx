@@ -1,9 +1,17 @@
 import React from 'react'
 import Head from 'next/head'
 
+interface MediaFile {
+  id?: number
+  name?: string
+  url?: string
+  formats?: any
+}
+
 interface Slot {
+  id?: number
   Name?: string
-  logo?: any
+  logo?: MediaFile | MediaFile[] | string
   link?: string
 }
 
@@ -183,53 +191,104 @@ export default function LuxuryCasino() {
         }
 
         .slot-card {
-          background: rgba(255, 255, 255, 0.05);
-          padding: 30px;
-          border-radius: 15px;
+          background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+          padding: 0;
+          border-radius: 20px;
           border: 2px solid #d4af37;
+          overflow: hidden;
           text-align: center;
-          transition: transform 0.3s, box-shadow 0.3s;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .slot-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+          transform: translateY(-10px) scale(1.02);
+          box-shadow: 0 20px 50px rgba(212, 175, 55, 0.4);
+          border-color: #f4d03f;
         }
 
-        .slot-logo {
-          margin-bottom: 20px;
-          height: 150px;
+        .slot-logo-container {
+          position: relative;
+          width: 100%;
+          height: 220px;
+          background: linear-gradient(180deg, rgba(212, 175, 55, 0.15) 0%, rgba(0, 0, 0, 0.3) 100%);
           display: flex;
           align-items: center;
           justify-content: center;
+          overflow: hidden;
+          border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .slot-logo-container::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+          pointer-events: none;
+        }
+
+        .slot-logo {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
         }
 
         .slot-logo img {
           max-width: 100%;
           max-height: 100%;
           object-fit: contain;
-          border-radius: 10px;
+          border-radius: 12px;
+          transition: transform 0.4s;
+          filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.3));
+        }
+
+        .slot-card:hover .slot-logo img {
+          transform: scale(1.1);
+        }
+
+        .slot-logo-placeholder {
+          font-size: 80px;
+          opacity: 0.3;
+        }
+
+        .slot-content {
+          padding: 25px 20px;
         }
 
         .slot-card h3 {
           color: #d4af37;
-          font-size: 24px;
-          margin-bottom: 20px;
+          font-size: 22px;
+          font-weight: 700;
+          margin-bottom: 15px;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .slot-link {
           display: inline-block;
           background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
           color: #1a1a2e;
-          padding: 12px 30px;
-          border-radius: 25px;
+          padding: 14px 35px;
+          border-radius: 30px;
           text-decoration: none;
           font-weight: bold;
-          transition: transform 0.3s;
+          font-size: 16px;
+          transition: all 0.3s;
+          box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+          text-transform: uppercase;
+          letter-spacing: 1px;
         }
 
         .slot-link:hover {
-          transform: scale(1.05);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+          background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
         }
 
         .data-section {
@@ -342,21 +401,48 @@ export default function LuxuryCasino() {
           <section className="slots-section">
             <h2 className="section-title">Featured Slots</h2>
             <div className="slots-grid">
-              {data.Slots.map((slot, index) => (
-                <div key={index} className="slot-card">
-                  {slot.logo && (
-                    <div className="slot-logo">
-                      <img src={slot.logo.url || slot.logo} alt={slot.Name || 'Slot'} />
+              {data.Slots.map((slot, index) => {
+                // Обробка різних форматів logo
+                let logoUrl = '';
+                if (slot.logo) {
+                  if (typeof slot.logo === 'string') {
+                    logoUrl = slot.logo;
+                  } else if (Array.isArray(slot.logo) && slot.logo.length > 0) {
+                    logoUrl = slot.logo[0].url || '';
+                  } else if (typeof slot.logo === 'object' && 'url' in slot.logo) {
+                    logoUrl = slot.logo.url || '';
+                  }
+                }
+
+                return (
+                  <div key={slot.id || index} className="slot-card">
+                    <div className="slot-logo-container">
+                      <div className="slot-logo">
+                        {logoUrl ? (
+                          <img 
+                            src={logoUrl} 
+                            alt={slot.Name || `Slot ${index + 1}`}
+                            onError={(e) => {
+                              e.currentTarget.style.display = 'none';
+                              e.currentTarget.parentElement!.innerHTML = '<div class="slot-logo-placeholder">🎰</div>';
+                            }}
+                          />
+                        ) : (
+                          <div className="slot-logo-placeholder">🎰</div>
+                        )}
+                      </div>
                     </div>
-                  )}
-                  <h3>{slot.Name || `Slot ${index + 1}`}</h3>
-                  {slot.link && (
-                    <a href={slot.link} className="slot-link" target="_blank" rel="noopener noreferrer">
-                      Play Now
-                    </a>
-                  )}
-                </div>
-              ))}
+                    <div className="slot-content">
+                      <h3>{slot.Name || `Slot ${index + 1}`}</h3>
+                      {slot.link && (
+                        <a href={slot.link} className="slot-link" target="_blank" rel="noopener noreferrer">
+                          Play Now
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </section>
         )}
