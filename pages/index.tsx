@@ -1242,7 +1242,7 @@ export default function TupchiyTemplate() {
                 <svg className="logo-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
                 </svg>
-                <span className="logo-text" style={{ fontSize: '1.25rem', display: 'none' }} className="logo-text-mobile">{siteName}</span>
+                <span className="logo-text logo-text-mobile" style={{ fontSize: '1.25rem', display: 'none' }}>{siteName}</span>
               </div>
 
               <div className="popup-text">{popupBonus}</div>
