@@ -1,5 +1,5 @@
 {
-  "name": "casino-luxury-casino",
+  "name": "casino-tupchiy",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
-    "typescript": "^5.0.0",
+    "typescript": "5.9.3",
     "@types/node": "^20.0.0"
   }
 }
