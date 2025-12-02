@@ -108,6 +108,22 @@
       ]
     }
   ],
-  "_generated_at": "2025-12-02T14:24:33.030Z",
+  "redirects": [
+    {
+      "id": 1,
+      "documentId": "aknfhnnt5588scrfny5gh8w6",
+      "fromPath": "/gotolink",
+      "toPath": "https://google.com",
+      "statusCode": "permanent",
+      "isActive": true,
+      "description": null,
+      "priority": 0,
+      "createdAt": "2025-11-28T14:56:58.550Z",
+      "updatedAt": "2025-11-28T14:56:58.550Z",
+      "publishedAt": "2025-11-28T14:56:58.544Z",
+      "locale": null
+    }
+  ],
+  "_generated_at": "2025-12-02T14:49:12.189Z",
   "_version": "1.0.0"
 }
