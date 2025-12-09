@@ -1,129 +1,44 @@
 {
   "name": "trush.info",
-  "description": "text text text ssss",
+  "description": null,
   "url": "trush.info",
-  "template": "luxury-casino",
+  "template": "tupchiy",
   "language_code": "en",
   "allow_indexing": true,
   "redirect_404s_to_homepage": true,
   "use_www_version": true,
-  "pages": [
-    {
-      "id": 1,
-      "documentId": "spwy63381oninh97w0llrig6",
-      "title": "Single page",
-      "slug": "single-page",
-      "content": "text text text. \n![Promotional art for Gates of Olympus slot game featuring Zeus and lightning.](http://localhost:1337/uploads/Gates_of_Olympus_500x560_D_W_2f303db1a0.jpg)",
-      "seo_title": null,
-      "seo_description": null,
-      "hero_title": null,
-      "hero_subtitle": null,
-      "is_homepage": false,
-      "order": 0,
-      "createdAt": "2025-11-24T20:11:52.246Z",
-      "updatedAt": "2025-11-24T20:11:52.246Z",
-      "publishedAt": null,
-      "locale": null,
-      "hero_image": {
-        "id": 1,
-        "name": "Gates-of-Olympus_500x560_D-W.jpg",
-        "url": "/uploads/Gates_of_Olympus_500x560_D_W_2f303db1a0.jpg",
-        "formats": {
-          "thumbnail": {
-            "name": "thumbnail_Gates-of-Olympus_500x560_D-W.jpg",
-            "hash": "thumbnail_Gates_of_Olympus_500x560_D_W_2f303db1a0",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 139,
-            "height": 156,
-            "size": 8.68,
-            "sizeInBytes": 8681,
-            "url": "/uploads/thumbnail_Gates_of_Olympus_500x560_D_W_2f303db1a0.jpg"
-          },
-          "small": {
-            "name": "small_Gates-of-Olympus_500x560_D-W.jpg",
-            "hash": "small_Gates_of_Olympus_500x560_D_W_2f303db1a0",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "path": null,
-            "width": 446,
-            "height": 500,
-            "size": 56.42,
-            "sizeInBytes": 56422,
-            "url": "/uploads/small_Gates_of_Olympus_500x560_D_W_2f303db1a0.jpg"
-          }
-        }
-      },
-      "sections": []
-    }
-  ],
-  "luxury_hero_title": "Хуй",
-  "luxury_hero_subtitle": "SUBTITLE",
-  "luxury_cta_text": "CTA TEXT",
-  "luxury_logo_url": "/logo-url",
-  "classic_welcome_text": "WELCOME TEXT",
-  "classic_main_cta": "MAIN CTA",
-  "classic_footer_text": "FOOTER TEXT",
-  "modern_tagline": "MODERN TAGLINE",
-  "modern_accent_color": "#FFF",
-  "modern_features_list": "FEATURES LIST",
-  "Slots": [
-    {
-      "id": 1,
-      "Name": "Gates of Olimpus",
-      "link": "/gotolink",
-      "logo": [
-        {
-          "id": 1,
-          "name": "Gates-of-Olympus_500x560_D-W.jpg",
-          "url": "/uploads/Gates_of_Olympus_500x560_D_W_2f303db1a0.jpg",
-          "formats": {
-            "thumbnail": {
-              "name": "thumbnail_Gates-of-Olympus_500x560_D-W.jpg",
-              "hash": "thumbnail_Gates_of_Olympus_500x560_D_W_2f303db1a0",
-              "ext": ".jpg",
-              "mime": "image/jpeg",
-              "path": null,
-              "width": 139,
-              "height": 156,
-              "size": 8.68,
-              "sizeInBytes": 8681,
-              "url": "/uploads/thumbnail_Gates_of_Olympus_500x560_D_W_2f303db1a0.jpg"
-            },
-            "small": {
-              "name": "small_Gates-of-Olympus_500x560_D-W.jpg",
-              "hash": "small_Gates_of_Olympus_500x560_D_W_2f303db1a0",
-              "ext": ".jpg",
-              "mime": "image/jpeg",
-              "path": null,
-              "width": 446,
-              "height": 500,
-              "size": 56.42,
-              "sizeInBytes": 56422,
-              "url": "/uploads/small_Gates_of_Olympus_500x560_D_W_2f303db1a0.jpg"
-            }
-          }
-        }
-      ]
-    }
-  ],
+  "pages": [],
+  "cloudflare_account": {
+    "id": 5,
+    "documentId": "az5p5ych2g2y6zc0emdufrg7",
+    "name": "Seo Cloud 23",
+    "email": "seocloud23@limecs.net",
+    "api_key": "413071512c2d6bd966dee9617e89578a9a8f9",
+    "account_id": "cf27c8dd6fdf5c5c98d253df45d2b22d",
+    "notes": null,
+    "is_active": true,
+    "createdAt": "2025-12-09T10:17:37.796Z",
+    "updatedAt": "2025-12-09T10:17:37.796Z",
+    "publishedAt": "2025-12-09T10:17:37.791Z",
+    "locale": null
+  },
+  "Slots": [],
   "redirects": [
     {
-      "id": 1,
-      "documentId": "aknfhnnt5588scrfny5gh8w6",
+      "id": 9,
+      "documentId": "d2141gbiyf85d8tvzemepafv",
       "fromPath": "/gotolink",
       "toPath": "https://google.com",
       "statusCode": "permanent",
       "isActive": true,
-      "description": null,
+      "description": "Redirect from /gotolink",
       "priority": 0,
-      "createdAt": "2025-11-28T14:56:58.550Z",
-      "updatedAt": "2025-11-28T14:56:58.550Z",
-      "publishedAt": "2025-11-28T14:56:58.544Z",
+      "createdAt": "2025-12-09T08:06:25.755Z",
+      "updatedAt": "2025-12-09T08:06:25.755Z",
+      "publishedAt": "2025-12-09T08:06:25.754Z",
       "locale": null
     }
   ],
-  "_generated_at": "2025-12-02T16:59:02.203Z",
+  "_generated_at": "2025-12-09T14:07:08.169Z",
   "_version": "1.0.0"
 }
