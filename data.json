@@ -23,6 +23,8 @@
     "publishedAt": "2025-12-09T10:17:37.791Z",
     "locale": null
   },
+  "subdomains": "trush.trush.info\nwww.trush.info",
+  "redirect_site": "https://google.com",
   "Slots": [],
   "redirects": [
     {
@@ -40,6 +42,6 @@
       "locale": null
     }
   ],
-  "_generated_at": "2025-12-10T08:31:55.878Z",
+  "_generated_at": "2025-12-15T11:25:29.222Z",
   "_version": "1.0.0"
 }

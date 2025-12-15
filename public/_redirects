@@ -1,2 +1,1 @@
-/gotolink https://google.com 301
-/*    /index.html   200
+/*  https://google.com/:splat  301
